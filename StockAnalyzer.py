@@ -1,8 +1,10 @@
-from datetime import datetime
 import requests
-from lxml import html
 import pygal
 import webbrowser
+from lxml import html
+from datetime import datetime
+
+api_key = "
 
 #Getting Stock Symbol
 
@@ -25,14 +27,19 @@ while True:
         break
     else: 
         print("\nInvalid Input\n")
+
 if usr_time_series == "1":
-
+    T_series = "Time_Series_Intraday"
+    T_series_output = "Time Series (5min)"
 if usr_time_series == "2":
-
+    T_series = "Time_Series_Daily"
+    T_series_output = "Time Series (Daily)"
 if usr_time_series == "3":
-
+    T_series = "Time_Series_Weekly"
+    T_series_output = "Weekly Time Series"
 if usr_time_series == "4":
-  
+    T_series = "Time_Series_Monthly"
+    T_series_output = "Monthly Time Series"
 # Start Date
 # End Date
 
