@@ -4,7 +4,7 @@ import webbrowser
 from lxml import html
 from datetime import datetime
 
-api_key = "
+
 
 #Getting Stock Symbol
 
@@ -12,8 +12,8 @@ stk_symbl = input("Enter the stock symbol: ")
 
 #Getting Chart Type
 while True;
-  print("\n----------Chart Type----------\n------------------\n 1) Bar\n 2) Line\n")
-  chrt_type = input("Enter Chart Type 1) Bar chart\n2) Line chart")
+  print("\n----------Chart Type----------\n------------------\n 1) Line\n 2) Bar\n")
+  chrt_type = input("Enter Chart Type 1) Line chart\n2) Bar chart")
   if chrt_type in ["1", "2"]:
       break
   else:
@@ -44,14 +44,14 @@ if usr_time_series == "4":
 while True:
     start_date = input("\nEnter Start Date (YYYY-MM-DD): ")
     try:
-        datetime.strptime(start_date, '%Y-%M-%d')
+        datetime.strptime(start_date, '%Y-%m-%d')
         break
     except ValueError:
           print("\nInvalid date format. Please use YYYY-MM-DD format.")
         
 # End Date
 while True:
-    end_date = input("\nEnter End Date in YYYY-MM-DD format: ")
+    end_date = input("\nEnter End Date (YYYY-MM-DD): ")
         try:
             datetime.strptime(end_date, '%Y,%m,%d')
             if end_date >= start_date:
@@ -60,4 +60,19 @@ while True:
                 print("The end date shound't be before the start date")
         except ValueError:
             print("\nInvalid date format. Please use YYYY-MM-DD format")
+
+print(stk_symbl, chrt_type, T_series, start_date, end_date)
+
+api_key = "QGB4RG9L7AWT1713"
+
+url = f'https://www.alphavantage.co/query?function={T_series}&symbol={stk_symbl}&apikey={api_key}'
+
+response = requests.get(url)
+data = response.json()
+print(data)
+
+#Creating Line Graph
+
+#Creating Bar Graph
+
 
