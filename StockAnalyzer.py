@@ -72,9 +72,11 @@ data = response.json()
 print(data)
 
 #Creating Line Graph
-line_chart = pygal.Line()
-line_chart.title = f'{stk_symbl} Stock Prices'
+if chrt_type == 1:
+    line_chart = pygal.Line()
+    line_chart.title = f'{stk_symbl} Stock Prices'
 #Creating Bar Graph
-bar_chart = pygal.Bar()
-bar_chart.title = f'{stk_symbl} Stock Prices'
+if chrt_type == 2:  
+    bar_chart = pygal.Bar()
+    bar_chart.title = f'{stk_symbl} Stock Prices'
 
