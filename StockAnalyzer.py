@@ -42,7 +42,7 @@ if usr_time_series == "4":
     T_series_output = "Monthly Time Series"
 # Start Date
 while True:
-    start_date = input("\nEnter start date (YYYY-MM-DD): ")
+    start_date = input("\nEnter Start Date (YYYY-MM-DD): ")
     try:
         datetime.strptime(start_date, '%Y-%M-%d')
         break
@@ -50,4 +50,14 @@ while True:
           print("\nInvalid date format. Please use YYYY-MM-DD format.")
         
 # End Date
+while True:
+    end_date = input("\nEnter End Date in YYYY-MM-DD format: ")
+        try:
+            datetime.strptime(end_date, '%Y,%m,%d')
+            if end_date >= start_date:
+                break
+            else:
+                print("The end date shound't be before the start date")
+        except ValueError:
+            print("\nInvalid date format. Please use YYYY-MM-DD format")
 
