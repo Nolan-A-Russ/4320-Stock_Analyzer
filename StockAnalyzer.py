@@ -41,5 +41,13 @@ if usr_time_series == "4":
     T_series = "Time_Series_Monthly"
     T_series_output = "Monthly Time Series"
 # Start Date
+while True:
+    start_date = input("\nEnter start date (YYYY-MM-DD): ")
+    try:
+        datetime.strptime(start_date, '%Y-%M-%d')
+        break
+    except ValueError:
+          print("\nInvalid date format. Please use YYYY-MM-DD format.")
+        
 # End Date
 
