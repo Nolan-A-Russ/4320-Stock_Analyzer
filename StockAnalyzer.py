@@ -65,7 +65,7 @@ print(stk_symbl, chrt_type, T_series, start_date, end_date)
 
 api_key = ""
 
-url = f'https://www.alphavantage.co/query?function={T_series}&symbol={stk_symbol}&apikey={api_key}'
+url = f'https://www.alphavantage.co/query?function={T_series}&symbol={stk_symbl}&apikey={api_key}'
 
 response = requests.get(url)
 data = response.json()
