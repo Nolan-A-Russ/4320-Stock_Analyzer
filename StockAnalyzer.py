@@ -75,6 +75,10 @@ print(data)
 if chrt_type == 1:
     line_chart = pygal.Line()
     line_chart.title = f'{stk_symbl} Stock Prices'
+    chart.x_labels = reversed([str(i) for i in range(1, len(closing_prices) + 1)])
+    chart.add('Closing Price', [float(price) for price in closing_prices])
+    chart.render_to_file('stock_chart.svg')
+    webbrowser.open('stock_chart.svg')
 #Creating Bar Graph
 if chrt_type == 2:  
     bar_chart = pygal.Bar()
