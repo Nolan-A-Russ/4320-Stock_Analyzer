@@ -63,7 +63,7 @@ while True:
 
 print(stk_symbl, chrt_type, T_series, start_date, end_date)
 
-api_key = ""
+api_key = "QGB4RG9L7AWT1713"
 
 url = f'https://www.alphavantage.co/query?function={T_series}&symbol={stk_symbl}&apikey={api_key}'
 
