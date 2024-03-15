@@ -17,8 +17,8 @@ stk_symbl = input("Enter the stock symbol: ")
 
 #Getting Chart Type
 while True;
-  print("\n----------Chart Type----------\n------------------\n 1) Line\n 2) Bar\n")
-  chrt_type = input("Enter Chart Type 1) Line chart\n2) Bar chart")
+  print("\n----------Chart Type----------\n")
+  chrt_type = input("Enter Chart Type\n1) Line chart \n2) Bar chart")
   if chrt_type in ["1", "2"]:
       break
   else:
@@ -26,8 +26,8 @@ while True;
 
 #Getting Time Series
 while True:
-    print("\n-----------Time Series-----------\n ----------------------\n 1) Intraday\n 2) Daily\n 3) Weekly\n 4) Monthly\n")
-    usr_T_series = input("Enter time series:\n 1\n 2\n 3\n 4\n Selection: ")
+    print("\n-----------Time Series-----------\n")
+    usr_T_series = input("Enter time series:\n1) Intraday\n 2) Daily\n 3) Weekly\n 4) Monthly\n Selection: ")
     if usr_T_series in ["1","2","3","4"]:
         break
     else: 
@@ -48,6 +48,7 @@ if usr_T_series == "4":
   
 # Start Date
 while True:
+    print("-------------Start Date-------------\n")
     start_date = input("\nEnter Start Date (YYYY-MM-DD): ")
     try:
         datetime.strptime(start_date, '%Y-%m-%d')
@@ -57,6 +58,7 @@ while True:
         
 # End Date
 while True:
+    print("-------------End Date-------------\n")
     end_date = input("\nEnter End Date (YYYY-MM-DD): ")
         try:
             datetime.strptime(end_date, '%Y,%m,%d')
