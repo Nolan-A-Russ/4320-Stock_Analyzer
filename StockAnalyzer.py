@@ -10,7 +10,7 @@ url = f'https://www.alphavantage.co/query?function={T_series}&symbol={stk_symbl}
 response = requests.get(url)
 data = response.json()
 tree = html.fromstring(response.text)
-print(data)
+
 
 #Getting Stock Symbol
 stk_symbl = input("Enter the stock symbol: ")
@@ -66,8 +66,6 @@ while True:
                 print("The end date shound't be before the start date")
         except ValueError:
             print("\nInvalid format. Please use YYYY-MM-DD format")
-
-print(stk_symbl, chrt_type, T_series, start_date, end_date)
 
 closing_prices = []
 for date, values in data[T_series_output].items():
